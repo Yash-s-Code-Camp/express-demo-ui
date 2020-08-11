@@ -8,6 +8,12 @@ $ cd express-demo-ui
 $ npm install
 ```
 
+> If you have already cloned it then use this command to update
+
+```cmd
+$ git pull origin
+```
+
 > To run the server
 
 ```cmd
