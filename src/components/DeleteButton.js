@@ -8,7 +8,7 @@ function DeleteButton(props) {
         console.log(e.target)
         console.log(`id- ${props.id}`)
 
-        fetch(`http://localhost:3000/students/id/${props.id}`,
+        fetch(`http://localhost:3001/students/id/${props.id}`,
             {
                 method: 'DELETE',
             }

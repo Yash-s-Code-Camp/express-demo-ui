@@ -1,21 +1,19 @@
 import React, { Component } from 'react';
 import DeleteButton from './DeleteButton';
 
-
 class Student extends Component {
 
     constructor() {
         super()
         this.state = {
-            students: []
+            students: [],
         }
     }
 
     async getAllStudents() {
-        await fetch('http://localhost:3000/students/all')
+        await fetch('http://localhost:3001/students/all')
             .then(res => res.json())
             .then(students => this.setState({ students }))
-
     }
 
     componentDidMount() {
@@ -32,17 +30,17 @@ class Student extends Component {
                     {
                         this.state.students.map(student =>
 
-                            <div key={student._id} style={{ width: ' 100%', backgroundColor: "#1e90ff", marginBottom: 5, padding: 5 }}>
-                                <h5>{student.name}</h5>
-                                <h6>{student.age}</h6>
-                                <DeleteButton id={student._id} />
-                            </div>
+                            <div className="card mb-3">
 
+                                < div className="card-body" >
+                                    < h5 className="card-title" > {student.name}</h5>
+                                    <p className="card-text">{student.age}</p>
+                                    <a href={`/detail/${student._id}`} className="btn btn-primary">Details</a>
+                                </div>
+                            </div >
                         )
                     }
                 </div>
-
-
             </div >
         );
     }

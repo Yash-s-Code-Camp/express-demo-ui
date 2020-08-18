@@ -27,7 +27,7 @@ class Form extends Component {
         // console.log(e.target)
         console.log(this.state)
 
-        fetch('http://localhost:3000/students/add',
+        fetch('http://localhost:3001/students/add',
             {
                 headers: {
                     'Accept': 'application/json',
@@ -45,9 +45,14 @@ class Form extends Component {
     render() {
         return (
             <form method="POST" onSubmit={this.handleFormSubmit}>
-                <input name="name" id="name" placeholder="Enter your name" onChange={this.handleChange} /><br />
-                <input name="age" id="age" placeholder="Enter your age" onChange={this.handleChange} /> <br />
-                <button>Add</button>
+                <div className="form-group">
+                    <input className="form-control" name="name" id="name" placeholder="Enter your name" onChange={this.handleChange} />
+                </div><div className="form-group">
+                    <input className="form-control" name="age" id="age" placeholder="Enter your age" onChange={this.handleChange} />
+                </div>
+
+
+                <button className="btn btn-primary">Add</button>
             </form>
         )
     }
