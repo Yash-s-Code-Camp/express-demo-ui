@@ -37,7 +37,8 @@ class Form extends Component {
                 body: JSON.stringify(this.state)
             }
         ).then((res) => {
-            console.log("data added")
+            // console.log("data added")
+            document.location.href = "/"
         })
     }
 
